@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package laboratorio;
+
+service Processador {
+  rpc RegistrarVeiculo(VeiculoRequest) returns (VeiculoResponse);
+  rpc ConsultarVeiculo(ConsultaRequest) returns (VeiculoResponse);
+}
+
+message VeiculoRequest {
+  string placa = 1;
+  string modelo = 2;
+  double velocidade = 3;
+  string setor = 4;
+
+  // Campo novo na evolução do contrato.
+  string observacao = 5;
+}
+
+message ConsultaRequest {
+  string placa = 1;
+}
+
+message VeiculoResponse {
+  string placa = 1;
+  string modelo = 2;
+  double velocidade = 3;
+  string setor = 4;
+  string mensagem = 5;
+
+  // Campo novo na evolução do contrato.
+  string observacao = 6;
+}
