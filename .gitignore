@@ -1,0 +1,16 @@
+# Ambiente virtual
+.venv/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Arquivos gerados pelo protoc
+processador_pb2.py
+processador_pb2_grpc.py
+
+# Configurações locais do VS Code
+.vscode/
+
+# Logs
+*.log

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package laboratorio;
+
+service Processador {
+  rpc RegistrarVeiculo(VeiculoRequest) returns (VeiculoResponse);
+  rpc ConsultarVeiculo(ConsultaRequest) returns (VeiculoResponse);
+  rpc CalcularMediaVelocidade(MediaVelocidadeRequest) returns (MediaVelocidadeResponse);
+}
+
+message VeiculoRequest {
+  string placa = 1;
+  string modelo = 2;
+  double velocidade = 3;
+  string setor = 4;
+}
+
+message ConsultaRequest {
+  string placa = 1;
+}
+
+message MediaVelocidadeRequest {
+  repeated double velocidades = 1;
+  int32 delay_ms = 2;
+}
+
+message VeiculoResponse {
+  string placa = 1;
+  string modelo = 2;
+  double velocidade = 3;
+  string setor = 4;
+  string mensagem = 5;
+}
+
+message MediaVelocidadeResponse {
+  double media = 1;
+  int32 quantidade = 2;
+}
